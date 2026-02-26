@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const logger = require("../utils/logger");
 
 const connectionString = process.env.MONGODB_URI;
 
@@ -9,11 +8,9 @@ if (!connectionString) {
 
 const initDb = async () => {
   await mongoose.connect(connectionString);
-  logger.info("MongoDB connection established");
 };
 
 module.exports = {
   mongoose,
   initDb,
 };
-
